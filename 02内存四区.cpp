@@ -1,5 +1,3 @@
-
-
 //常见的其他代码即函数
 //system("cls"); 用于清空控制台的文字
 //代码区:存放函数体的二进制代码，由操作系统进行管理的
@@ -20,3 +18,26 @@
 //全局变量和静态变量存放在此.
 //全局区还包含了常量区, 字符串常量和其他常量也存放在此.
 //该区域的数据在程序结束后由操作系统释放
+#include<iostream>
+using namespace std;
+int g_a = 10;
+//const修饰的全局变量
+const int c_s_a = 10;
+int main()
+{
+	//字符串常量
+	cout << "字符串常量的地址" << &("hello world") << endl; 
+	//全局变量
+	cout << "全局变量的地址" << &g_a << endl; 
+	static int s_a = 10;
+	//静态变量
+	cout << "静态变量的地址" << &s_a << endl; 
+
+	//const修饰的局部变量
+	const int c_s_b = 10;
+	cout << "const修饰的局部变量" << &c_s_b << endl;
+	cout << "const修饰的全局变量" << &c_s_a << endl;
+	system("pause");
+
+	return 0;
+}
